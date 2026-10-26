@@ -1,0 +1,12 @@
+*.aux
+*.fls
+*.log
+*.out
+*.swp
+*.toc
+*.xdv
+*.synctex.gz
+*.fdb_latexmk
+*.pdf_tex
+*svg-tex.pdf
+*/svg-inkscape/*

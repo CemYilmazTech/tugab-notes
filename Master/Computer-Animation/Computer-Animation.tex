@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper, 12pt]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -16,6 +16,7 @@
 \usepackage{graphicx}
 \usepackage{makeidx}
 \usepackage{tikz}
+\usepackage{svg}
 \usepackage{cases}
 \usepackage{apacite}
 \usepackage{tkz-berge}
@@ -29,6 +30,12 @@
 
 
 % figure support
+\definecolor{tugblue}{HTML}{33588B}
+\allsectionsfont{\color{tugblue}}
+\newcommand{\coloredrule}[2][tugblue]{%
+  \textcolor{#1}{\rule{\linewidth}{#2}}%
+}
+
 \usepackage{import}
 \usepackage{xifthen}
 \pdfminorversion=7
@@ -85,5 +92,35 @@ numberstyle = \tiny,
   morecomment=[l]\%,
 }
 \begin{document}
+	\begin{titlepage}
+	        \vspace*{0.8cm}
+	        \begin{center}
+	                \coloredrule{2pt}\par
+	                \vskip 0.6cm
+	                \textbf{\Huge Computer Animation}\par
+	                \vskip 0.3cm
+	                \coloredrule{2pt}\par
 	
+	                \vskip 3cm
+	
+	                \includesvg[width=0.4\textwidth]{gabrovo}
+	
+	                \vspace{3cm} % small space before your name and info
+	                \Large CEM YILMAZ \\
+	                \Large Technical University of Gabrovo \\
+	                \Large Faculty of \\
+	                \Large\textit{Electrical Engineering and Electronics}\\
+	
+	                \vspace{2cm}
+	                \Large Notes made for the degree of\\
+	                \Large \textit{Software and Computer Engineering}\\
+	                \Large \today \\
+	                \vspace{0.5cm}
+	
+	                \vfill  % Pushes content up from bottom
+	        \end{center}
+	\end{titlepage}
+	
+	\tableofcontents
+	\newpage
 \end{document}
