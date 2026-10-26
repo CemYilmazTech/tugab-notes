@@ -173,6 +173,7 @@ Data mining is not to be confused with artificial intelligence. Data mining is t
 	\item Clustering is a method of grouping data under the same label, which be based on distance in a graph, or other features such as values. Classification is the idea of labelling every data point based on where they belong e.g. this is a dog, this is a cat, or a bird. Regression analysis is the analysis of data points based on coordinate system using variables, can also be multi dimensional. It helps you predict next points, find error of your analysis for accuracy, where you can interpolate or extrapolate. You can also use hybrid approaches, where you combine different data processing techniques. For example, you can combine k-means to classify new points without using AI, but first establish clustering based on unsupervised deep learning model.
 	\item Two points: AI can be used as a data mining tool, for example clustering. Additionally, data mining output can also be used to train AI and improve AI using patterns and information it has discovered. For example, you can use linear regression analysis between two variables to predict another point's values. The main difference between the both is the following: data mining is the process of extracting and finding useful patterns in a data set. Artificial intelligence, on the other hand, is a field with algorithms and systems which imitate human reasoning through learning, reasoning and decision-making to solve complex problems.
 \end{enumerate}
+\newpage
 \section{Data Mining}
 \subsection{What is Data Mining?}
 \begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Data Mining \label{Data Mining}\end{defn}]
@@ -238,6 +239,15 @@ The timeline of data mining is as follows:
 \begin{enumerate}
 	\item Data mining is the process of extracting, cleaning, analysing, and interpreting a dataset. It is important because in today's age, data is found abundantly using the internet and all competitors, businesses etc. use it to optimise their production, advertisements and market presence, giving them an edge over competitors that do not.
 \end{enumerate}
+\newpage
 \section{Data Preprocessing}
-
+\subsection{Data Cleaning}
+Also known as data scrubbing, involves identifying and correcting errors, inconsistencies and inaccuracies in datasets to ensure quality and reliability. It is essential for the following reasons:
+\begin{itemize}
+	\item \textbf{Accurate analysis}: accurate analysis requires accurate and reliable data. If it is corrupt or inaccurate, you may obtain erroneous analyses, interpretations, patterns and conclusions.
+	\item \textbf{Consistency}: inconsistent data formats such as dates, numbers, naming conventions can hinder data integration and data analysis.
+	\item \textbf{Outlier detection}: data points that deviate significantly from the rest of the data set (outliers) can distort obtained results from analyses. Data cleaning involves detecting and eliminating such deviations.
+	\item \textbf{Improved data quality}: Data cleaning techniques such as deduplication, recording rules and constraints for accurate and reliable results.
+\end{itemize}
+There are many ways to handle missing values, including deletion or imputation (estimating values). For duplicate entries, you can delete them. Fixing inconsistent formatting will require to standardise the field. For deviations, you can winsorise it (replaced with the nearest values within a specific percentile range) or delete it. Integration of inconsistent data can be done using data harmonisation and linking records. 
 \end{document}
