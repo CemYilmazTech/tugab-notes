@@ -1,0 +1,53 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
+  <diagram name="Page-1" id="iI0eALp17o60j2eqaZgd">
+    <mxGraphModel dx="976" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CXL-PKLdOESlPhwJXLUU-8" edge="1" parent="1" source="CXL-PKLdOESlPhwJXLUU-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="CXL-PKLdOESlPhwJXLUU-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CXL-PKLdOESlPhwJXLUU-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Sender&lt;div&gt;(information source)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="40" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="CXL-PKLdOESlPhwJXLUU-9" edge="1" parent="1" source="CXL-PKLdOESlPhwJXLUU-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CXL-PKLdOESlPhwJXLUU-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Encoder&lt;div&gt;(transmitter)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="200" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="CXL-PKLdOESlPhwJXLUU-11" edge="1" parent="1" source="CXL-PKLdOESlPhwJXLUU-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="CXL-PKLdOESlPhwJXLUU-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CXL-PKLdOESlPhwJXLUU-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Channel" vertex="1">
+          <mxGeometry height="60" width="120" x="360" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="CXL-PKLdOESlPhwJXLUU-12" edge="1" parent="1" source="CXL-PKLdOESlPhwJXLUU-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="CXL-PKLdOESlPhwJXLUU-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CXL-PKLdOESlPhwJXLUU-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Decoder&lt;div&gt;(reception)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="520" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="CXL-PKLdOESlPhwJXLUU-15" edge="1" parent="1" source="CXL-PKLdOESlPhwJXLUU-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="CXL-PKLdOESlPhwJXLUU-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="360" />
+              <mxPoint x="100" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CXL-PKLdOESlPhwJXLUU-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Receiver&lt;div&gt;(destionation)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="680" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="CXL-PKLdOESlPhwJXLUU-13" edge="1" parent="1" source="CXL-PKLdOESlPhwJXLUU-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="CXL-PKLdOESlPhwJXLUU-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CXL-PKLdOESlPhwJXLUU-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Noise" vertex="1">
+          <mxGeometry height="40" width="80" x="380" y="280" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

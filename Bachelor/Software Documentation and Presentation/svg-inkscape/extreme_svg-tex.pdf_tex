@@ -1,0 +1,74 @@
+%% Creator: Inkscape 1.4.2 (ebf0e940, 2025-05-08), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'extreme_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{234.76009369bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.95032215)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0.16013947,0.90202635){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Planning/feedback loops\end{tabular}}}}%
+    \put(0.30372412,0.82896383){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Release plan\end{tabular}}}}%
+    \put(0.38197556,0.0029764){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Code\end{tabular}}}}%
+    \put(0.59520591,0.74058612){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Iteration plan\end{tabular}}}}%
+    \put(0.6632732,0.62531087){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Acceptance test\end{tabular}}}}%
+    \put(0.67796193,0.48716263){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Stand-up meeting\end{tabular}}}}%
+    \put(0.70029147,0.34850958){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Pair negotiation\end{tabular}}}}%
+    \put(0.71489198,0.20395077){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Unit test\end{tabular}}}}%
+    \put(0.53171218,0.09417031){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Pair programming\end{tabular}}}}%
+    \put(0.52252465,0.79158234){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.24999988}\smash{\begin{tabular}[t]{l}Months\end{tabular}}}}%
+    \put(0.67312753,0.68600501){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.24999988}\smash{\begin{tabular}[t]{l}Weeks\end{tabular}}}}%
+    \put(0.76064081,0.56179661){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.24999988}\smash{\begin{tabular}[t]{l}Days\end{tabular}}}}%
+    \put(0.74045692,0.42982495){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.24999988}\smash{\begin{tabular}[t]{l}One day\end{tabular}}}}%
+    \put(0.75132518,0.29164281){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.24999988}\smash{\begin{tabular}[t]{l}Hours\end{tabular}}}}%
+    \put(0.64853539,0.16309411){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.24999988}\smash{\begin{tabular}[t]{l}Minutes\end{tabular}}}}%
+    \put(0.49048711,0.04788331){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.24999988}\smash{\begin{tabular}[t]{l}Seconds\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{extreme_svg-tex.pdf}}%
+  \end{picture}%
+\endgroup%

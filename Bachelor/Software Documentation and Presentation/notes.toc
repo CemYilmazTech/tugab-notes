@@ -1,0 +1,65 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Module}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Learning Objectives}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Software Documentation}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Technical Writing}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Types of Documentation}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Software Documentation Process}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Markdown Formatting}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Structured Writing}{6}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Graphics}{7}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Information Architecture}{8}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Cards Sorting}{9}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Quality}{9}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Style Guide}{10}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Content Management System (CMS)}{11}{subsection.2.11}%
+\contentsline {section}{\numberline {3}Software Development Life Cycle (SDLC)}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}What is SDLC?}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Phase 1: Planning}{13}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Phase 2: Requirements}{13}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Phase 3: Design and Prototyping}{14}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Phase 4: Software Development}{15}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Phase 5: Testing}{15}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Phase 6: Implementation}{16}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Phase 7: Operation and Maintenance}{16}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Waterfall Model}{17}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Incremental Model}{18}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}Iterative Model}{18}{subsection.3.11}%
+\contentsline {subsection}{\numberline {3.12}V Model}{19}{subsection.3.12}%
+\contentsline {subsection}{\numberline {3.13}Spiral Model}{20}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.14}Agile Model}{21}{subsection.3.14}%
+\contentsline {section}{\numberline {4}Unified Modelling Language (UML)}{22}{section.4}%
+\contentsline {subsection}{\numberline {4.1}What is UML}{22}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Class Diagrams}{24}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Composite Structure Diagrams}{25}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Package Diagrams}{26}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Component Diagrams}{26}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Deployment Diagrams}{27}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Object Diagrams}{28}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Profile Diagrams}{29}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}Use Case Diagrams}{30}{subsection.4.9}%
+\contentsline {subsection}{\numberline {4.10}Activity Diagrams}{31}{subsection.4.10}%
+\contentsline {subsection}{\numberline {4.11}State Machine Diagrams}{32}{subsection.4.11}%
+\contentsline {subsection}{\numberline {4.12}Sequence Diagrams}{33}{subsection.4.12}%
+\contentsline {subsection}{\numberline {4.13}Communication Diagrams}{34}{subsection.4.13}%
+\contentsline {subsection}{\numberline {4.14}Interaction Overview Diagrams}{35}{subsection.4.14}%
+\contentsline {subsection}{\numberline {4.15}Timing Diagrams}{36}{subsection.4.15}%
+\contentsline {section}{\numberline {5}Communication \& Software Presentation}{36}{section.5}%
+\contentsline {subsection}{\numberline {5.1}What is Communication}{36}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Three Principles of Communication}{37}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Three Levels of Understanding}{38}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Data and Information}{38}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Three Ingredients of a Presentation}{39}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}How To Start a Presentation Effectively}{40}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Elements of an Effective Presentation}{40}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}10 Tips for a Successful Presentation}{42}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}8 Tips for Reducing Anxiety}{43}{subsection.5.9}%
+\contentsline {subsection}{\numberline {5.10}Personal Appearance}{43}{subsection.5.10}%
+\contentsline {subsection}{\numberline {5.11}10 Tips for Planning Successful Slides and Visualisation}{44}{subsection.5.11}%
+\contentsline {subsection}{\numberline {5.12}15 Tips for Creating Better Slides}{45}{subsection.5.12}%
+\contentsline {subsection}{\numberline {5.13}Layout}{46}{subsection.5.13}%
+\contentsline {subsection}{\numberline {5.14}Teleconferencing and Videoconferencing}{47}{subsection.5.14}%
+\contentsline {section}{Appendices}{49}{section*.37}%
+\contentsline {section}{\numberline {A}Style Guide Example}{49}{appendix.1.A}%
+\contentsline {section}{\numberline {B}Planning \& Design Example}{65}{appendix.1.B}%
+\contentsline {section}{\numberline {C}SRS Example}{75}{appendix.1.C}%

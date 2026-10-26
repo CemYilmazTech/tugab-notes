@@ -1,0 +1,1089 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[toc,page]{appendix}
+\usepackage{listings}
+\usepackage{lmodern}
+\usepackage{amsfonts}
+\usepackage{titling}
+\usepackage{lipsum}
+\usepackage[left=1in, right=1in, bottom=1in, top=1in]{geometry}
+\usepackage{amsthm}
+\usepackage{tabularx}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{makeidx}
+\usepackage{tikz}
+\usepackage{svg}
+\usepackage{apacite}
+\usepackage{tkz-berge}
+\usepackage{url}
+\usepackage{tgtermes}
+\usepackage{sectsty}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{amsmath, amssymb}
+
+
+% figure support
+\definecolor{tugblue}{HTML}{33588B}
+\allsectionsfont{\color{tugblue}}
+\newcommand{\coloredrule}[2][tugblue]{%
+  \textcolor{#1}{\rule{\linewidth}{#2}}%
+}
+
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{color}
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+%mathstyling
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{cor}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{exmp}{Example}[section]
+\newtheorem{axiom}{Axiom}
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{note}{Note}
+
+\definecolor{darkgreen}{rgb}{0.0, 0.5, 0.0}
+
+\pdfsuppresswarningpagegroup=1
+\lstset{
+tabsize = 4, %% set tab space width
+showstringspaces = false, %% prevent space marking in strings, string is defined as the text that is generally printed directly to the console
+numbers = left, %% display line numbers on the left
+commentstyle = \color{darkgreen}, %% set comment color
+keywordstyle = \color{blue}, %% set keyword color
+stringstyle = \color{red}, %% set string color
+rulecolor = \color{black}, %% set frame color to avoid being affected by text color
+basicstyle = \small \ttfamily , %% set listing font and size
+breaklines = true, %% enable line breaking
+numberstyle = \tiny,
+  frame=none,
+  xleftmargin=2pt,
+  stepnumber=1,
+  belowcaptionskip=\bigskipamount,
+  captionpos=b,
+  escapeinside={*'}{'*},
+  language=haskell,
+  tabsize=2,
+  emphstyle={\bf},
+  showspaces=false,
+  columns=flexible,
+  showstringspaces=false,
+  morecomment=[l]\%,
+}
+\begin{document}
+	\begin{titlepage}
+        \vspace*{0.8cm}
+        \begin{center}
+           \coloredrule{2pt}\par
+            \vskip 0.6cm
+            \textbf{\Huge Software Documentation and Presentation}\par
+            \vskip 0.3cm
+            \coloredrule{2pt}\par
+
+            \vskip 3cm
+    
+            \includesvg[width=0.4\textwidth]{gabrovo}
+    
+            \vspace{3cm} % small space before your name and info
+            \Large CEM YILMAZ \\
+            \Large Technical University of Gabrovo \\
+            \Large Faculty of \\
+            \Large\textit{Electrical Engineering and Electronics}\\
+    
+            \vspace{2cm}
+            \Large Notes made for the degree of\\
+            \Large \textit{Software and Computer Engineering}\\
+            \Large \today \\
+            \vspace{0.5cm}
+    
+            \vfill  % Pushes content up from bottom
+        \end{center}
+    \end{titlepage}
+
+	\tableofcontents
+	\newpage
+	\section{Introduction}
+	\subsection{Module}
+	This module is about showing, presenting and letting you plan a software product. You will be learning importance of information architecture in software documentation and how to effectively communicate with the end user or the developer. A documentation of a software may vary from a user guide to api documentation, metadata, video or even a specification and requirements of a document.\\
+\\
+	\noindent By the end of this module, you will be able to know the basics of writing software documentation and its strategies, how it can be presented, and various different media that can be used to describe the function of the software. In other words, you will be able to document, present and create graphics of a complex software product using tools such as Markdown, Powerpoint, UML and various other standards and technologies. You will gain the skills to show users and developers on how to set up and use the software or service, save time and energy, establish common rules and best practices, and assisting people solve problems by themselves.
+	\subsection{Learning Objectives}
+	The learning objectives for this module are:
+	\begin{itemize}
+		\item Learn what is required to start working on the software documentation for an app.
+		\item Try out tools and infrastructure that help you immediately get started writing your software documentation.
+		\item Learn Markdown language.
+		\item Understand and write specific standards for writing software documentation, varying from global standards to company-specific standards.
+		\item Learn how to present your software to users or colleagues confidently and correctly using MS PowerPoint.
+		\item Learn Unified Modeling Language (UML).
+		\item Learn methods of identifying a good documentation structure.
+		\item Learn how to assess and identify quality software documentation. 
+		\item Learn the software development lifecycle (SDLC).
+		\item Learn various SLDC structures used in corporations and identify the differences between them.
+	\end{itemize}
+\section{Software Documentation}
+		
+	\subsection{Technical Writing}
+	Technical writing is a discipline of writing text. It is a special type of writing used when you need to explain to another person: what is the product or services you provide and what are the different features of this product or service. In general documentation you should cover:
+	\begin{itemize}
+		\item Install
+			\item Set up and configure
+			\item Use
+			\item Maintain
+			\item Dispose of
+	\end{itemize}
+	your product or service. You have to plan, prepare, create, classify, deliver and maintain information for a specific software or service.
+	\subsection{Types of Documentation}
+	There are two types of documentation: functional and task-oriented documentation.
+	\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Functional Documentation \label{Functional Documentation}\end{defn}]
+	Functional documentation is suitable for users who are just getting started with a new product. It explains what you see in front of you, helps you find your way through the product and is often used for physical products. 
+	\end{tcolorbox}
+	\noindent An example of functional documentation is the \href{https://support.apple.com/guide/keynote/get-started-with-keynote-tan115e144b4/mac}{Intro to Keynote on Mac}. In this example, it is a high level example of the interface, with a short description paired with screenshots. In functional documentation, users are likely to only view the document once only. Usually, the steps are: start with the first screen, describe what is seen. You should organise the content in the order it appears in the UI. \\
+	\\
+	\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Task-Oriented Documentation \label{Task-Oriented Documentation}\end{defn}]
+	Task-oriented documentation is suitable for advanced usage of a product, and it does not explain what is in front of you. It instead focuses on how to achieve a certain result. It guides you through the steps required to achieve that result, helping you find your way.
+	\end{tcolorbox}
+	\noindent An example of task-oriented documentation is the \href{https://support.apple.com/guide/keynote/add-or-delete-slides-tan7223571d/14.4/mac/1.0}{Add or delete slides in Keynote on Mac}. Specifically, it particularly provides steps on how to achieve a certain result. Usually, the steps are: identifying the tasks needed to perform, sequence them, add supporting concepts and information, and finally add reference information that helps them later on.
+	\subsection{Software Documentation Process}
+	The process of software documentation is as follows:
+	\begin{figure}[H]
+		\centering
+		\includesvg{writing_process}
+		\caption{Software Documentation Writing Process}
+		\label{fig:writing_process}
+	\end{figure}
+	\subsection{Markdown Formatting}
+	Markdown is commonly used for basic documentation of software that is meant for developers to see. It is usually the default language that is used for READMEs of Git repositories. Additionally, GitHub has a "wiki" page dedicated to every repository, which can assist you in writing documentation for a specific software. \\
+	\begin{lstlisting}[language = Markdown , caption={GitHub MD Syntax} , frame = trBL , firstnumber = last , escapeinside={(*@}{@*)}]
+	** Bold **
+	* Italic *
+	~~ Strikethrough ~~
+	** Bold and _nested italic_ **
+	<ins>Underline</ins>
+
+	<sub>Subscript</sub>
+	<sup>Superscript</sup>
+
+	> Quote 
+	` Code Quote `
+
+	1. Enumerate
+	2. Enumerate
+	3. Enumerate
+	- Bullet point
+	- Bullet point
+	- Bullet point
+
+	> [!NOTE]
+	> This is note text.
+
+	> [!TIP]
+	> This is tip text.
+
+	> [!IMPORTANT]
+	> This is important text.
+
+	> [!WARNING]
+	> This is a warning text.
+
+	> [!CAUTION]
+	> This is caution text.
+
+	![Alt image text](image url)
+
+	<a name="anchor-name"></a>
+	[Anchor text](#anchor-name)
+	[Anchor text](mailto:test@gmail.com)
+
+	Foornote reference[^1]
+	[^1]: Text located in the foornote
+
+	| col1 | col2 | col3 |
+	-----: | :----- | :-----:
+	| right-aligned text | left-aligned text | center text
+	| 
+	\end{lstlisting}
+	For examples of these markdowns and more detail, you can visit the official \href{https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax}{GitHub page on MD syntax}. Another ready example of these elements used in a GitHub wiki can be found \href{https://github.com/JordanStanchev/Getting-Started-as-User-Assistance-Developer/wiki}{here}. We advise that you exercise by creating a GitHub public repository, and try out multiple functions such as creating pages.
+	\subsection{Structured Writing}
+	\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Structure Writing \label{Structure Writing}\end{defn}]
+	Term coined by Robert E. Horn, his research identified over 200 common block types called information blocks which identifies common documentation types. They were then assembled into information types using information maps.
+	\end{tcolorbox}
+	\noindent Structured writing is essential as it provides a better user experience (UX), can target different audiences, increase efficiency, organise content and ensure the completeness of the documentation. The most common information types are:
+	\begin{itemize}
+		\item Concept
+		\item Procedure
+		\item Process
+		\item Principle
+		\item Fact
+		\item Structure
+		\item Classification
+	\end{itemize}
+		An implementation of this theory in practice is the Darwin Information Typing Architecture (DITA) for the extensive markup language (XML). More information on DITA can be found \href{https://ditaworld.com/}{here}. For example, the head of structured writing may have specific formats for specific tasks. These structure writing standards can vary from company to company and is called a style guide. When explaining a software concept (which answers the question what is\ldots), it may chronologically always have:
+	\begin{itemize}
+		\item Title
+		\item Summary (what is achieved? 1-2 sentences)
+		\item Related (where could the answer also be?)
+		\item Detailed Overview (video + technicality)
+		\item Example (video)
+	\end{itemize}
+	Or for example, in a task (which answers the question how to\ldots) you may have a format which is chronologically always:
+	\begin{itemize}
+		\item Title
+		\item Summary
+		\item Related (where could the answer also be?)
+		\item Prerequisites
+		\item Steps
+		\item Result
+		\item Example
+	\end{itemize}
+	Note that excessive amount of steps i.e. 10+, may indicate a problem, with little exceptions. Another possible topic is called "Reference". A reference is generally for advanced users that know the procedures, but require specific information e.g. specific parameters to do a function. They just care about the parameters, and not steps, as an example. It would appear like a list or a dictionary. The title or the heading of the documentation would typically be "About" or "What is" the software or service, and possibly listing its features.
+\subsection{Graphics}
+Graphics are a great way to present information to your readers without appearing boring. It is also up to 6000 times more efficient to perceive to end users compared to text. When writing documentation or presenting your software, it is important to add graphical elements that can aid the users in understanding the information. Some examples may include diagrams, UML, infographics, videos and other methods. There are several tools that let you achieve graphics, such as PowerPoint, Google Slides, Drawio, and even Canva. In this module, we will be specifically targetting PowerPoint and UML as different sections.
+\subsection{Information Architecture}
+\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Information Architecture \label{Information Architecture}\end{defn}]
+Information architecture is the art and science of organising large masses of information in a consistent and a logical manner.
+\end{tcolorbox}
+\noindent In particular, for software documentation we need to ensure that the user can easily find what they're looking for. To do this, you will need clearly labelled, organised, and easily navigable documentation. \\
+\\
+\noindent For effective information architecture, you need to pinpoint your audience. Specifically, not just as a label such as "hotel receptionists" or "software engineers", but rather the idea of who they are, their job, their education, their location, and how this can vary from person to person. As such, when designing software documentation, you need to brainstorm the type of people you are targeting and also do real research on the opinion of using your documentation for real feedback. You will notice large variations between used device, how they access information, and even the format they expect the documentation to be in. Prepare an interview with a list of questions, and even tasks of finding specific information, analyse it and adopt the changes in your documentation. \\
+\\
+\noindent There are 6 ways of logically structuring information that is relevant for this course. They are:
+\begin{itemize}
+	\item Categorical structure - presented topics are equally important, no hierarchy or sequence between categories, flexible order. E.g., A job listing describing skills e.g. teamwork, problem-solving, expertise etc.
+	\item Evaluation structure - introduces a problem or decision, weights advantages and disadvantages, ends with a conclusion or recommendation. Used for advice and reviews e.g. pros and cons of changing jobs.
+	\item Chronological structure - presented in a time order and focuses on how events unfold over time. Emphasises the process rather than the outcome. Used in reports, historical accounts. E.g., a narrative describing a historical event.
+	\item Comparative structure - compares two or more viewpoints. Examines similarities and differences. Has criteria for comparison. Common in debates, arguments. E.g., a speech comparing political policies.
+	\item Sequential structure - explains a process step by step with clear instructional language and fixed order of steps. Common in manuals, tutorials, etc. E.g. how to install software.
+	\item Causal structure - explains causes and effects with no alternatives. Focuses on explaining why something happens. E.g. an article on the causes and effects of air pollution.
+\end{itemize}
+\subsection{Cards Sorting}
+\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Card Sorting \label{Card Sorting}\end{defn}]
+A user research technique that allows you to create the information architecture from your content. There are two methods: open card sorting and closed card sorting. In open card sorting, you allow the users to group their cards in any way they want. Once they group them together, you ask them to label these groups. In closed card sorting, the users group their cards in pre-defined categories.
+\end{tcolorbox}
+The benefits of the technique are:
+\begin{itemize}
+	\item Decide on the structure of pages that lead to your content
+	\item Label the content in a user oriented manner
+	\item Group your content and/or products information in a way that makes sense to your target audience of users
+\end{itemize}
+The open card sorting technique allows you to compare the results of what a user expects of the documentation sequence to be like. In this technique, you let the user to do the sorting the cards which then you compare with your own implementation. 
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=\textwidth]{open_card}
+		\caption{Open Cards Sorting Technique Process}
+		\label{fig:open_card}
+	\end{figure}
+	\noindent You can also do this on a web-based software called \href{https://www.mural.co/}{Mural}. \\
+\\
+\noindent On the other hand, the closed card sorting technique has the categories completely pre-defined. The users group the titles together in the pre-defined groups. You can use this to measure how adequate your current navigation is from the customer perspective.
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=\textwidth]{closed_card}
+		\caption{Closed Cards Sorting Technique Process}
+		\label{fig:open_card}
+	\end{figure}
+\subsection{Quality}
+The definition of quality can vary from person to person, therefore, it is important to pin what a person means when they express their opinion on the software documentation. What do they mean by whether a software documentation is good, or what do they mean by when it is bad, and why. I.e., the definition can change from relative perspective to other documentation, or whether it achieves the job it was intended to do. According to research by Jordan Stanchev, the characteristics of a high-quality software documentation are:
+\begin{itemize}
+	\item Helpful - relevant, solves the problem, depicts the use cases. 
+	\item Comprehensive - covers all aspects, uses consistent terminology, satisfies the standard of the industry.
+	\item Searchable - easy to find, easy search and navigation, SEO optimised, local search
+	\item Visual - Incorporating short videos, using diagrams where possible, use of graphics, images, screenshots and annotated views.
+	\item Usable - short and to the point, well organised content, providing the answer with minimum effort, links to detail when needed.
+	\item Reliable - up-to-date, accurate, information from reliable source and validated.
+	\item Grammatically Correct - easy to understand, no imperfections, no spelling mistakes, meaningful sentence structure and language.
+	\item Translatable and Localisation Friendly - easy to localise, easy to translate to other languages
+	\item Accessible - deployable by print or online, accessible at the point of need, to be in a shared and logical location.
+	\item Uses Appropriate Tone - direct, simple, adheres to writing guidelines and rules for writing.
+\end{itemize}
+\subsection{Style Guide}
+Style guides lets you a company to have their documentation, marketing and various other forms of writing to be consistent and fit with the branding. By ensuring consistency, order, and styling we are able to bring clear information to the target users. An example guideline can be found at University of Oxford's \href{https://www.ox.ac.uk/public-affairs/style-guide}{page}. The style guide has general examples of good or bad, what you must do and what you mustn't do, etc. Even the style guides contains a logical order. The users of style guides are: usability experts, developers, owners, translators, content editors, user assistance developers, technical writers and more. A style guideline will help you achieve well organised content using:
+\begin{itemize}
+	\item Conciseness - avoiding redundancies, using visual aids, link to information instead of copying text.
+	\item Simplicity - simple language and grammar, short sentences, positive formulations, no long series of nouns, simple sentences.
+	\item Precision - true information, consistent and correct terminology, navigation paths, product or component names.
+\end{itemize}
+It is also important to use precise verbs when addressing the steps or information in the guide. For example,
+\begin{itemize}
+	\item MUST - an absolute requirement
+	\item MUST NOT - an absolute prohibition
+	\item SHOULD - a recommendation
+	\item SHOULD NOT - not recommended
+	\item MAY - optional
+\end{itemize}
+The key is to use precise keywords an in active, not passive voice. If appropriate, you may additionally address the user as "you". Ensure that terminology is explained clearly and consistent. In addition you can consider:
+\begin{itemize}
+	\item Contractions - i.e. don't, can't, musn't
+	\item Humour - i.e. avoid, it may be offensive in different cultures
+	\item Gender - never assume the gender of the reader, use formulations such as his or her, them etc.
+	\item Jargon or idioms - completely avoid
+\end{itemize}
+Always use tools such as \href{https://www.grammarly.com/}{Grammarly}, spell-checkers, etc. to ensure precision and quality check. Even in a software's UI messages and text on screens e.g. errors, success messages should be compatible and possibly defined in the style guide.
+\subsection{Content Management System (CMS)}
+\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Content Management System \label{Content Management System}\end{defn}]
+A software application that supports the creation and modification of digital content. It is typically used to support multiple users working in a collaborative environment. An example of this is Overleaf or Google Docs.
+\end{tcolorbox}
+\noindent A CMS is used for development, review, storage, versioning, organising, structuring, publishing, error handling of a documentation. Some example of CMS also include SDL, Ixiasoft, Schema ST4, and others. Generally a good CMS will let you output a single documentation in various formats such as HTML, PDF, ePUB etc.
+\section{Software Development Life Cycle (SDLC)}
+\subsection{What is SDLC?}
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=0.7\textwidth]{sdlc}
+		\caption{Software Development Life Cycle}
+		\label{fig:sdlc}
+	\end{figure}
+The SDLC can be seen as a framework, process, model, guideline or even an approach to the development of software. It has a total of 7 stages, all of which will be explained in detail in this section. The stages are:
+\begin{enumerate}
+	\item Planning
+	\item Requirement
+	\item Design and Prototyping
+	\item Software Development
+	\item Testing
+	\item Deployment
+	\item Operation and Management
+\end{enumerate}
+The SDLC model exists to aid people in planning, to explain the process and to reach goals. The benefits of the SDLC model are:
+\begin{itemize}
+	\item Tracking the development of the project and aiding its visibility.
+	\item Establishing common vocabulary for each step of the process.
+	\item Ensuring and improving quality of the software.
+	\item Clarifying goals and responsibility of the software project.
+	\item Increasing the speed of implementation
+	\item Reducing the project risk
+	\item Reduce project management costs
+	\item Remove any unnecessary costs
+\end{itemize}
+\subsection{Phase 1: Planning}
+
+In phase one, planning or analysis and planning, you analyse the alignment, resource allocation, scheduling and cost estimation of the software project. You would create a scope of work document (a type of documentation) where you would outline the project specifications, deliverables, timelines, agreements, risks and mitigations, etc. Some companies also include the prototypical design described through graphics using UML and other tools in the planning document to help plan the next section, requirements. An exemplar planning and design document can be found in Appendix B of this document.
+\subsection{Phase 2: Requirements}
+
+
+In phase two, requirements, you collect, research and analyse the requirements for the software project. You handle meetings with the business team, and the project analyst team which consist of the business analyst, project manager and the technical manager. You also analyse the use cases, such as how does the existing system work? Who will use the system? What input and output data are needed? Is it necessary to integrate with third-party interfaces (APIs) or tools? How will security and privacy be managed? What are the limitations? \\
+\\
+\noindent At this stage, you would create the "Software requirements specification document", abbreviated as the SRS Document. 
+\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Software Requirements and Specification Document \label{Software Requirements and Specification Document}\end{defn}]
+A document that is created in phase 2 of SDLC. It contains the project's functional, non-functional and technical requirements.
+\end{tcolorbox}
+\vspace{0.3cm}
+\noindent In the SRS document, you would outline the functional requirements (what the system should perform, i.e., tasks) and non-functional requirements (how the system should perform, i.e. concepts).
+\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Functional Requirements \label{Functional Requirements}\end{defn}]
+Functional requirements of a software describe what the system should be performing. What the software application or product must be able to do. These are requirements usually requested by the end user. One could think of the are the "performed tasks" of the software.
+\end{tcolorbox}
+\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Non-Functional Requirements \label{Non-Functional Requirements}\end{defn}]
+Non-functional requirements of a software describe how the system should be performing. Whether that is the accessibility, scalability, availability, maintainability or extensibility. One could think of these as the "architectural concepts" of the software.
+\end{tcolorbox}
+\noindent Consider the exemplar below for an online banking system requirements:
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|X|}
+		\hline
+		\textbf{Functional Requirements} & \textbf{Non-Functional Requirements} \\
+	\hline
+			Users should be able to log in with their username and password. & The system should respond to user actions in less than 2 seconds. \\
+			\hline
+			Users should be able to check their account balance. & All transactions must be encrypted and comply with industry security standards. \\
+			\hline
+			Users should receive notifications after making a transaction. & The system should be able to handle 100 million users with minimal downtime. \\
+			\hline
+
+	\end{tabularx}
+	\caption{Functional and Non-Functional Requirements of Online Banking}
+	\label{tab:functional}
+\end{table}
+\noindent The SRS document may contain the technical requirements.
+\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Technical Requirements \label{Technical Requirements}\end{defn}]
+The technical requirements of a software describe requirements such as the technical stack, packages, languages, databases, etc. The technical requirements may be included in the SRS or the planning document.
+\end{tcolorbox}
+An exemplar SRS document can be found in Appendix B.
+\subsection{Phase 3: Design and Prototyping}
+In this phase, you would be converting the SRS, planning and design into a real prototype product. The idea is to create a minimum viable product (MVP) or sometimes a non-functioning prototype with barebones UI. The design document may additionally have two types of design: high-level design and low-level design
+\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}High-level Design \label{High-level Design}\end{defn}]
+High-level design is a type of design documentation of a software found in phase 3 that concerns the entire system, such as describing the overall architecture, database design, dataflow diagrams, brief description of services, modules, relationships. It is produced by architects.
+\end{tcolorbox}
+\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Low-level Design \label{Low-level Design}\end{defn}]
+Low-level design is a type of design documentation of a software found in phase 3 that concerns detailed descriptions of specific parts of the system. It would include the actual logic of each component and details of the specification of each module. E.g., classes. It is produced by the lead developers.
+\end{tcolorbox}
+Once prototyping and designing is finished, in this phase you also collect prototype feedback for later stages and ensure improvement, and clear any miscommunications or unclear requirements with the business team. Note that the testing in this phase usually includes internal teams, and may not be completely thorough. The goal is to gain enough information for the final product.
+\subsection{Phase 4: Software Development}
+In phase 4, software development, you begin producing the final product. After gaining all the documents together, you will have a clear idea and a goal of what is required to be developed for the end user. At this stage, you may come across a developer guide that describes the best conventions during development. This may include things such as commenting your code, specific ways of naming functions, and generally how to maintain code. Note that document may not be present at all companies, as developers have general rules on naming conventions on things such as classes. These are general best practices. These conventions may even differ from language to language. An example for the HTML language can be found \href{https://www.w3schools.com/HTML/html5_syntax.asp}{here}. The code will also likely be peer reviewed. \\
+\\
+
+\noindent During the development phase, you may also come across the changelog. Changelogs typically can be seen through Git commit messages, or even in some cases, a full changelog that can be seen by end users. It describes the additions, removals or fixes per version change. If the code meets all the requirements, it then moves onto being tested by the quality assurance team.
+\subsection{Phase 5: Testing}
+In phase 5, testing, after the product has been developed, you begin with quality assurance testing. There are different types of testing that can happen:
+\begin{itemize}
+	\item QA Testing - does the software product expected results in terms of quality i.e. ease of use, understanding?
+	\item Functional Testing - do the functionalities of the software produce the results that are expected?
+	\item Integration Testing - does the product perform the expected result and behaviour when calling APIs?
+	\item Performance Testing - does the product perform specific functions, and integrations within specified times, number of users?
+	\item Penetration Testing - how does the product perform on edge cases, rogue inputs or attempts to break the system?
+\end{itemize}
+If any tests fail, these are logged and informed to the development team. Successful passed tests are also logged. Note that these tests may either be automatic, manual or a mix. This phase will have subsequent releases. \\
+\\
+\noindent Once the fixes are implemented to a satisfactory degree, a signature will be given from the testing team and the QA environment which will move onto the stage environment, where end users will begin testing the product. This is called the UAT, user acceptance testing. If it is also satisfactory, signature once more will be collected to move onto the next phase. The final output is a detailed document that shows results of all types of tests.
+\subsection{Phase 6: Implementation}
+In phase 6, implementation, it is the phase at which you begin to launch your product. You enter the production deployment stage where all the code will be moved from a developer environment to a production environment. There are automated deployment tools such as Azure DevOps, Kubernetes with minimum manual intervention. Deployment activities are done by a DevOps team. In big companies, a request for change (RFC) is created. It is a formal document asking permissions for change, explaining step by step how the deployment is done. It additionally includes a rollback plan. Finally, a manager reviews this document, evaluates the risk and impact, and approves it.
+\subsection{Phase 7: Operation and Maintenance}
+In phase 7, operation and maintenance, the software enters its active lifecycle where it is being used by end users in the production environment. This phase focuses on ensuring the software continues to function properly and meets user needs.\\
+\\
+\noindent Continuous monitoring of system performance, uptime, and user activity is essential during this phase. Technical support is provided to end users through help desks or support tickets, tracking and responding to bug reports and user feedback. Regular releases of updates, patches, and new versions are deployed, including security patches to address vulnerabilities, performance improvements, and documentation updates.\\
+\\
+\noindent During this phase, Service Level Agreements (SLA) is typically established. The SLA contains:
+
+\begin{itemize}
+	\item Establishing and maintaining SLAs that define expected service quality standards such as uptime percentage, response time, and resolution time
+	\item Monitoring compliance with agreed-upon service levels (e.g., 99.9\% uptime)
+	\item Regular SLA reporting to stakeholders and clients
+\end{itemize}
+
+\noindent There are several types of maintenance that occur during this phase:
+
+\begin{itemize}
+	\item Corrective Maintenance - Fixing bugs and defects that were not discovered during testing
+	\item Adaptive Maintenance - Modifying the software to work with new operating systems, hardware, or third-party integrations
+	\item Perfective Maintenance - Enhancing existing features or adding new functionality based on user requests
+	\item Preventive Maintenance - Making changes to prevent future problems, such as code refactoring or performance optimization
+\end{itemize}
+
+\noindent This phase typically represents the longest period in the SDLC, as successful software products remain in operation for years, requiring ongoing attention and resources.
+\subsection{Waterfall Model}
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=\textwidth]{waterfall}
+		\caption{The Waterfall Model}
+		\label{fig:waterfall}
+	\end{figure}
+The Waterfall Model is a sequential SDLC approach where each phase must be completed entirely before moving to the next phase. The process flows linearly through all seven phases: planning, requirements, design, development, testing, deployment, and maintenance, with no overlap between phases. Once a phase is completed, there is typically no going back to make changes. This model is almost never used in modern software development due to its inflexibility and inability to accommodate changing requirements. It may only be suitable for very small projects with extremely well-defined and stable requirements, or in highly regulated industries where extensive documentation and rigid processes are mandatory.
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|X|}
+		\hline
+		\textbf{Advantages} & \textbf{Disadvantages} \\
+		\hline
+		Simple and easy to understand and manage & No working software until late in the project lifecycle \\
+		\hline
+		Clear structure with well-defined phases and milestones & Extremely difficult and costly to accommodate changes \\
+		\hline
+		Easy to track progress and measure completion & High risk and uncertainty for complex projects \\
+		\hline
+		Works well for small projects with clear requirements & Assumes all requirements can be known upfront \\
+		\hline
+		Extensive documentation at each phase & Testing happens late, making bugs expensive to fix \\
+		\hline
+		Each phase has specific deliverables and review process & Not suitable for projects where requirements may evolve \\
+		\hline
+	\end{tabularx}
+	\caption{Advantages and Disadvantages of Waterfall Model}
+	\label{tab:waterfall}
+\end{table}
+\subsection{Incremental Model}
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=\textwidth]{incremental}
+		\caption{Incremental Model}
+		\label{fig:incremental}
+	\end{figure}
+The Incremental Model is an SDLC approach where the software is developed and delivered in small, manageable increments or modules. Each increment goes through all the SDLC phases (planning, requirements, design, development, testing, deployment, and maintenance), but only for a specific portion of the functionality. Instead of completing all phases for the entire system at once, you complete all phases for one increment at a time. Core features are typically developed in the first increment, with additional features added in subsequent increments, allowing users to start using basic functionality early before the complete system is finished.
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|X|}
+		\hline
+		\textbf{Advantages} & \textbf{Disadvantages} \\
+		\hline
+		Early delivery of working software allows users to provide feedback sooner & Requires good planning and design to define clear increments \\
+		\hline
+		Easier to test and debug smaller increments & May lead to integration issues between increments \\
+		\hline
+		Flexibility to change requirements between increments & Total cost may be higher due to repetitive phases \\
+		\hline
+		Lower initial delivery costs and risks & Requires more management and coordination effort \\
+		\hline
+		Easier to manage and prioritise critical features first & System architecture must be defined early and remain stable \\
+		\hline
+	\end{tabularx}
+	\caption{Advantages and Disadvantages of Incremental Model}
+	\label{tab:incremental}
+\end{table}
+\subsection{Iterative Model}
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=\textwidth]{iterative}
+		\caption{Iterative Model}
+		\label{fig:iterative}
+	\end{figure}
+The Iterative Model is an SDLC approach where the software is developed through repeated cycles or iterations. Each iteration goes through all the SDLC phases (planning, requirements, design, development, testing, deployment, and maintenance) and produces a working version of the software. Unlike the Incremental Model where each increment adds new functionality, the Iterative Model refines and improves the entire system with each iteration based on feedback and testing results. The first iteration typically implements a basic version of the complete system, and subsequent iterations enhance, optimise, and add features to the existing system. This model is particularly useful when requirements are not fully understood at the beginning or are expected to evolve over time.
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|X|}
+		\hline
+		\textbf{Advantages} & \textbf{Disadvantages} \\
+		\hline
+		Early working prototype available for user feedback & Requires more resources and time due to repeated cycles \\
+		\hline
+		Easier to accommodate changing requirements & Can lead to scope creep if not properly managed \\
+		\hline
+		Risks are identified and resolved early in iterations & Requires strong management and clear objectives for each iteration \\
+		\hline
+		Continuous testing and refinement improves quality & May be difficult to define clear iteration boundaries \\
+		\hline
+		Parallel development can occur across different iterations & Architectural changes in later iterations can be costly \\
+		\hline
+		Better suited for large and complex projects & Requires highly skilled and experienced team members \\
+		\hline
+	\end{tabularx}
+	\caption{Advantages and Disadvantages of Iterative Model}
+	\label{tab:iterative}
+\end{table}
+\subsection{V Model}
+
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=\textwidth]{v}
+		\caption{V Model}
+		\label{fig:v}
+	\end{figure}
+
+The V Model, also known as the Verification and Validation Model, is an extension of the Waterfall Model that emphasises testing at each phase of development. The model is shaped like the letter "V" where the left side represents the development phases descending from requirements to implementation, and the right side represents the corresponding testing phases ascending from unit testing to acceptance testing. Each development phase on the left has a corresponding testing phase on the right: requirements correspond to acceptance testing, design corresponds to system testing, and detailed design corresponds to integration and unit testing. This model ensures that testing is planned in parallel with development, making it particularly suitable for projects where quality and reliability are critical, such as medical devices, aviation systems, or safety-critical applications.
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|X|}
+		\hline
+		\textbf{Advantages} & \textbf{Disadvantages} \\
+		\hline
+		High emphasis on testing and quality assurance & Very rigid and inflexible like the Waterfall Model \\
+		\hline
+		Testing is planned early alongside development phases & No working software until late in the development cycle \\
+		\hline
+		Clear and well-defined phases with specific deliverables & Difficult to accommodate changing requirements \\
+		\hline
+		Easy to track progress and defects at each stage & Not suitable for complex or long-term projects \\
+		\hline
+		Works well for small to medium projects with clear requirements & High risk for projects with uncertain or evolving requirements \\
+		\hline
+		Defects are found early due to parallel test planning & Expensive to implement changes once testing has begun \\
+		\hline
+	\end{tabularx}
+	\caption{Advantages and Disadvantages of V-Model}
+	\label{tab:vmodel}
+\end{table}
+\subsection{Spiral Model}
+
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=0.6\textwidth]{spiral}
+		\caption{Spiral Model}
+		\label{fig:spiral}
+	\end{figure}
+The Spiral Model is an SDLC approach that combines elements of both iterative development and the Waterfall Model, with a strong emphasis on risk analysis. The model is represented as a spiral with multiple loops, where each loop represents a phase in the development process. Each spiral iteration consists of four main quadrants: planning and requirements gathering, risk analysis, engineering and development, and evaluation by stakeholders. The process starts from the center of the spiral and progresses outward with each iteration, allowing the project to evolve incrementally while continuously assessing and mitigating risks. This model is particularly suitable for large, complex, and high-risk projects where thorough risk assessment is critical, such as enterprise systems, mission-critical applications, or projects with significant uncertainty in requirements or technology.
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|X|}
+		\hline
+		\textbf{Advantages} & \textbf{Disadvantages} \\
+		\hline
+		Strong emphasis on risk analysis and mitigation & Can be expensive due to extensive risk analysis activities \\
+		\hline
+		Flexibility to accommodate changing requirements & Requires highly skilled risk analysis expertise \\
+		\hline
+		Early identification of potential risks and issues & Not suitable for small or low-risk projects \\
+		\hline
+		Continuous stakeholder involvement and feedback & Complex to manage and requires extensive documentation \\
+		\hline
+		Suitable for large and complex projects & Success heavily depends on risk assessment accuracy \\
+		\hline
+		Prototypes are developed early for validation & Can lead to scope creep if not properly controlled \\
+		\hline
+	\end{tabularx}
+	\caption{Advantages and Disadvantages of Spiral Model}
+	\label{tab:spiral}
+\end{table}
+\subsection{Agile Model}
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=0.55\textwidth, inkscapelatex=false]{extreme}
+		\caption{Extreme Programming Model}
+		\label{fig:extreme}
+	\end{figure}
+The Agile Model is a modern SDLC approach that emphasises flexibility, collaboration, and rapid delivery of working software through iterative and incremental development. The development process is divided into short time periods called sprints, typically lasting 1-4 weeks, where a potentially shippable product increment is delivered at the end of each sprint. Agile focuses on continuous collaboration between self-organising cross-functional teams and stakeholders, with regular feedback and adaptation to changing requirements. The model prioritises working software over comprehensive documentation, customer collaboration over contract negotiation, and responding to change over following a fixed plan. Popular Agile frameworks include Scrum, Kanban, and Extreme Programming (XP). Agile is currently the most widely used SDLC model in modern software development, particularly for web applications, mobile apps, and projects where requirements are expected to evolve.
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|X|}
+		\hline
+		\textbf{Advantages} & \textbf{Disadvantages} \\
+		\hline
+		Rapid delivery of working software in short iterations & Requires significant customer involvement and commitment \\
+		\hline
+		High flexibility to accommodate changing requirements & Can be difficult to predict timelines and costs accurately \\
+		\hline
+		Continuous customer feedback and collaboration & Less emphasis on documentation can cause knowledge gaps \\
+		\hline
+		Early and frequent detection of issues and defects & Requires highly skilled and experienced team members \\
+		\hline
+		Improved team morale through self-organisation & Not suitable for projects with fixed scope and budget \\
+		\hline
+		Better quality through continuous testing and integration & Can lead to scope creep without proper discipline \\
+		\hline
+	\end{tabularx}
+	\caption{Advantages and Disadvantages of Agile Model}
+	\label{tab:agile}
+\end{table}
+\section{Unified Modelling Language (UML)}
+\subsection{What is UML}
+Unified Modelling Language is a standard for creating schemas, diagrams, and figures in a way that explains the flow of a software, service or a product. UML was developed by software engineers Grady Booch, Ivar Jacobson and James Rumbaugh during 1994 and 1995. Today it is maintained by the Object Management Group (OMG) and the IEEE. Latest documentation of the UML version can be found \href{https://www.omg.org/spec/UML/2.5.1/PDF}{here}. For drawing diagrams in a software, we recommend using \href{https://www.drawio.com/}{drawio}.\\
+\\
+\noindent In this section, we will be covering in what specific scenarios UML is used and how. We will not be teaching the symbols of all UML standards as the symbol list is massive. To find the symbol list, we recommend that you read the latest official documentation mentioned above or visit this \href{https://www.uml-diagrams.org/}{website}. There are different standards and notations depending on the type of process you are describing. Such different standards of notation and symbolism of diagrams are:
+\begin{itemize}
+\item Class Diagrams
+\item Composite Structure Diagrams
+\item Package Diagrams
+\item Component Diagrams
+\item Deployment Diagrams
+\item Object Diagrams
+\item Profile Diagrams
+\item Use Case Diagrams
+\item Activity Diagrams
+\item State Machine Diagrams
+\item Sequence Diagrams
+\item Communication Diagrams
+\item Interaction Overview Diagrams
+\item Timing Diagrams
+\end{itemize}
+
+\noindent Note that the above list is not exhaustive. Some companies also have their own recognised UML standards such as Cisco. We will not be covering every single one of the diagrams listed above, but only the most useful ones. There are two types of diagrams in UML.
+\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Structural Diagrams \label{Structural Diagrams}\end{defn}]
+Structural diagrams focus on illustrating the organisation of a system by depicting its components. The goal is to represent elements that make up the system and the relationships between them. These include composite structure, deployment, package, profile, class, object and component diagrams.
+\end{tcolorbox}
+\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Behavioural Diagrams \label{Behavioural Diagrams}\end{defn}]
+Behavioural diagrams focus on illustrating the dynamic aspects of a software system, showcasing how it behaves, responds to stimuli and undergoes state changes during runtime. These include activity, use case, state machine, sequence, communication, interaction overview, and timing diagrams.
+\end{tcolorbox}
+
+\subsection{Class Diagrams}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{class.png}
+	\caption{Class Diagrams Example}
+	\label{fig:class-png}
+\end{figure}
+UML Class diagrams illustrate the structure of the system using the classes defined. The name of the class is written above, with its attributes below the name. Below attributes we find the methods. The return type is also state in both attributes and methods. Class visibility is shown using ssymbols $+$ (public), $-$ (private),$# $ (protected), $\sim$ (package local). You can also describe the classes using their relationships, i.e. association, inheritance, realisation, dependency, aggregation and composition.
+\subsection{Composite Structure Diagrams}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{composite.png}
+	\caption{Composite Structure Diagrams Example}
+	\label{fig:composite-png}
+\end{figure}
+A composite structure diagram can be used to show the internal structure of a classifier, classifier interactions with environment through ports or a behaviour of collaboration. Similar to a class diagram, except it allows the user to  fully explain the internal structure of multiple classes and show the interaction between them. In other words, composite structure diagrams show the internal parts of a class.
+\subsection{Package Diagrams}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{package.png}
+	\caption{Package Diagrams Example}
+	\label{fig:package-png}
+\end{figure}
+Package diagrams illustrate the location and organisation of model elements in a medium scale or large scale projects. It can display both the structure and the dependencies between subsystems or modules. Packages can be imported, merged, accessed or used. You can alternatively divide a group of packages to their own subsystem for better representation.
+\subsection{Component Diagrams}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{component.png}
+	\caption{Component Diagrams Example}
+	\label{fig:component-png}
+\end{figure}
+Component diagrams are used for modelling physical aspects of object oriented systems that are used for visualising, defining, and documenting component-based systems. They are similar to class diagrams, with focus on system components that are used to model the static implementation view of a system. It is most typically used in component-based development. A component can either be logical or physical. A component diagram would show how a web app's frontend component connects to a backend API component, which then connects to a database component, providing a high-level abstraction and general description of a system.
+\subsection{Deployment Diagrams}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{deployment.png}
+	\caption{Deployment Diagrams Example}
+	\label{fig:deployment-png}
+\end{figure}
+Deployment diagrams are used for modelling components and relationships between components and classifiers with deployment artifacts to deploy targets. It helps represent the static representation of a system deployment. Deployment diagrams model the elements of physical hardware or software and ways of communicating between them. It can be used to plan system architecture or documenting deployment of software components or nodes. It is a special kind of class diagram that focuses on system nodes.
+\subsection{Object Diagrams}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{class.png}
+	\caption{Class Diagrams Example (Object requires value substitution)}
+	\label{fig:object-png}
+\end{figure}
+Object diagrams are similar to that of a class diagram. It captures a snapshot of the detailed state of the system objects and their relationship at a specific point in time. It is primarily used to explain complicated cases, or to test the robustness of the existing class diagram by substituting a scenario.
+\subsection{Profile Diagrams}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{profile.png}
+	\caption{Profile Diagrams Example}
+	\label{fig:profile-png}
+\end{figure}
+Profile diagrams provide a general extension mechanism for customising UML models for specific domains and platforms. A profile is a set of extensions that jointly configure UML for a specific domain. An example of a specific platform is .NET. There are three major types of extensions, stereotypes, tags and constraints. Stereotypes let you create the vocabulary of UML. New model elements can be created from existing ones with more specific properties. E.g. $\ll$button$\gg$. Tags are used to create extra information under the names e.g. author or version.
+\subsection{Use Case Diagrams}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{usecase.png}
+	\caption{Ucase Case Diagrams Example}
+	\label{fig:usecase-png}
+\end{figure}
+Use case diagrams summarise the relationships between uses cases, actors and systems. Use case diagrams do not the order in which steps to achieve the goals of each use case are taken. Uses cases only show functional requirements of a system. It is usually constructed as early stage of a development, to specify the context of a system, capture requirements, validate system architecture and drive implementation and generate test cases. 
+\subsection{Activity Diagrams}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{activity.png}
+	\caption{Activity Diagrams Example}
+	\label{fig:activity-png}
+\end{figure}
+Activity diagrams demonstrate the object flow with emphasis on the sequence and conditions of the flow. It is an extended version of flowchart that models the transition from one activity to another, and shows how system activities are coordinated to provide a service that can be at a different level of abstraction.
+\subsection{State Machine Diagrams}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{statemachine.png}
+	\caption{State Machine Diagrams Example}
+	\label{fig:statemachine-png}
+\end{figure}
+State machine diagrams show discrete behaviour of a part of design systems through finite state transitions. It can also display how state of objects can be changed depending on the behaviour. It can be applied to objects or anything that can change state e.g. actor.
+\subsection{Sequence Diagrams}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{sequence.png}
+	\caption{Sequence Diagrams Example}
+	\label{fig:sequence-png}
+\end{figure}
+The most common type of interaction diagram, it focuses on the message interchange between a number of lifelines. It details how operations are performed. The horizontal axis display elements, whereas vertical axis displays time. Note that time axis display the sequence of order, and not the duration it takes for actions.
+\subsection{Communication Diagrams}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{communication.png}
+	\caption{Communication Diagrams Example}
+	\label{fig:communication-png}
+\end{figure}
+Also called the collaboration diagram, illustrates interactions between objects and/or parts using sequences messages in a free-form arrangement. The purpose of this diagram is to illustrate the messages or roles that each object has in the system. It captures how systems work with each other using systems without specifying time or specific cases.
+\subsection{Interaction Overview Diagrams}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{interactionoverview.png}
+	\caption{Interaction Overview Diagrams}
+	\label{fig:interactionoverview-png}
+\end{figure}
+These diagrams are used to provide overview of the flow of control where nodes of the flow are interactions or interaction uses. It is a high-level abstraction that illustrates the flow of activity between diagrams. It resembles an activity diagram which the elements were replaced by small sequence diagrams. 
+\subsection{Timing Diagrams}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{timing.png}
+	\caption{Timing Diagrams Example}
+	\label{fig:timing-png}
+\end{figure}	
+Timing diagrams are used to show interactions when a primary purpose of the diagram is to reason about time. Timing diagrams focus on conditions changing within and among lifelines along a linear time axis. It indicates the intervals between state changes of various objects. 
+\section{Communication \& Software Presentation}
+\subsection{What is Communication}
+\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Communication \label{Communication}\end{defn}]
+Communication is the act of transmitting or receiving information.
+\end{tcolorbox}
+\noindent Communication is an essential skill to ensure that the information received and transmitted has been provided with clarity, understanding and unambiguity. To enhance our understanding of communication, several scientific models were created. One of such models is the Shannon and Weaver transmission model developed in 1949, illustrated below.
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=1\textwidth, inkscapelatex=false]{shannon}
+		\caption{Shannon and Weaver Transmission Model}
+		\label{fig:shannon}
+	\end{figure}
+	\noindent The Shannon-Weaver model explicitly states that there is a source, a transmitter, a channel, a receiver and a destination. In the channel, there may be a level of noise and interference added. \\
+	\\
+	\noindent Another proposed model is Wiio's Law of (mis-)communication. Developed by Osmo Antero Wiio, he is best known for his humourous quote "\textit{Communication usually fails, except when it is a mistake}".
+	\begin{itemize}
+		\item Communication usually fails, except when it is a mistake.
+		\item If communication can fail, it will fail.
+		\item If communication cannot fail, it still usually fails.
+		\item If communication seems to succeed in the way you intended, someone is misunderstood.
+		\item If a message can be interpreted in several ways, it will be interpreted in a way that maximises damage.
+		\item There is always someone who knows better than you what your message means.
+		\item The more we communicate, the more communication fails.
+	\end{itemize}
+	\noindent In other words, what you communicate and have in your mind will never have the same message the moment you decide to share it. As such, there is a requirement for more complicated models, utilising the idea of pattern matching. This module as such explores the idea of a bottom-up processing and top-down processing. The brain does not recognise objects instantly. Instead, it looks for basic features like shape and colour. Different brain networks detect these features independently and in parallel. Bottom-up processing, for example, recognises the shape of letters. Top-down processing combines those shapes into words you understand. Neocortex is responsible for top-down processing, whereas bottom-up uses more primitive parts such as brainstem and cerebellum.
+\subsection{Three Principles of Communication}
+To understand "what effect am I having?" when we relay information to other people, we need to delve deeper into the pattern-matching model of communication. The pattern-matching model of communication suggests three important principles.
+\begin{enumerate}
+	\item Communication is continuous. If we are always updating our understanding, then communication must be continuous to be effective. It cannot be a one-time event, like a radio broadcast, but a process.
+	\item Communication is complex. Whatever we understand is communicated, including everything we observe and not just listening to the words that someone says. Body messages, signals, including the "music" of their voice and the "dance" of their body.
+	\item Communication is contextual. That is, communication never occurs in isolation. The meaning of communication can be influenced by at least five different contexts such as psychological, relational, situational, ecological, cultural, etc.
+\end{enumerate}
+And as such, we propose a new definition of communication. 
+\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Communication \label{Communication}\end{defn}]
+Communication is the processing of creating common understandings.
+\end{tcolorbox}
+\subsection{Three Levels of Understanding}
+We propose three levels of measuring and understanding understanding. 
+\begin{itemize}
+	\item Relationship - We create an understanding through verbal, vocal and physical behaviours. It is important to understand the intention of the communication and the reason. Other people should not feel excluded or interrogated, so avoid talking too much about yourself and asking other people direct questions about themselves. Relationships ensure that when communicating, individuals are in the same rhythm.
+	\item Information - Once a relaxed connection is established, we are ready to share information. For example, expressing "I see" or "ah" exclaims information that we gain an understanding of a topic. However, we often misunderstand each other due to approaching a problem from different angles. Information is always "out there", always in our minds. It is dynamic. 
+	\item Action - we communicate to encourage an action. The key to effective action is not accurate information, but compelling ideas. Ideas give meaning to information.
+\end{itemize}
+\subsection{Data and Information}
+It is important to note the difference between data and information. A research begins with the process of collecting data. In general, data refers to facts or statistics collected by a researcher for analysis in its original form. When data is processed, it is transformed in such a way that it becomes useful to the users, known as "information. Data is unsystematic fact or detail about something, whereas information is systematic and filtered form of data that is useful. A data can either be qualitative (non-numerical) or quantitative (numerical), that can be classified to primary(in-person) or secondary (learned from someone else). Or even internal compared to external data. 
+\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Data \label{Data}\end{defn}]
+Data is a collection of facts and details such as text, figures, observations, symbols, numbers, or even descriptions of a thing, event or object, collected with a view to drawing conclusions.
+\end{tcolorbox}
+\begin{tcolorbox}[colback=black!3!white,colframe=black!60!white,title=\begin{defn}Information \label{Information}\end{defn}]
+Information is form of data that is processed, organised, specific and structured form of data presented in a given setting. It assigns meaning and improves the reliability of data, thereby ensuring understandability and reducing uncertainty. 
+\end{tcolorbox}
+The key differences are:
+\begin{itemize}
+	\item Data is simple text and numbers while information is processed and interpreted data.
+	\item Data is unorganised form i.e. they are randomly collected facts and figures that are processed. Information is organised which presents data better and adds meaning.
+	\item Data is based on observations and records stored in computers or remembered by a person. Information is concluded through analysis, not given as an immediate output.
+	\item Data is bare and is raw facts. Information refers to facts about a particular event or subject that is refined through processing.
+	\item Data is not always relevant, whereas information is always relevant.
+	\item Data does not depend on information. Information depends on data.
+	\item Data is not always useful, whereas information is after the process is.
+\end{itemize}
+\subsection{Three Ingredients of a Presentation}
+There are three main ingredients that must be present for a presentation. Without any of these ingredients, the presentation will fail. These are:
+\begin{itemize}
+	\item The presentation itself
+	\item The audience
+	\item The presenter
+\end{itemize}
+Unfortunately, presentations are also an extremely expensive way to get your message across. They take up extra time compared to other methods, which is money. Therefore, one must be sure that the presentation is worth the effort. Good reasons include:
+\begin{itemize}
+	\item Communicating time-critical information to a large group of people
+	\item Persuading audience to make a choice, change their decision, take a course of action or convey information to others in person
+	\item Audience is interested, concerned or needs to hear what you have to say
+	\item Teaching a skill or information to more than three people at a time
+	\item Have a clear set up of objectives
+	\item Acts as a bonding exercise for the people participating
+	\item Have the time, energy and commitment to make the presentation
+\end{itemize}
+And before preparing a presentation, it is important to ask yourself:
+\begin{itemize}
+	\item Is there a better way to convey this information?
+	\item Do I have all the information I need?
+	\item How much will this presentation cost and is it cost-effective?
+	\item What is this presentation about? What will the audience do, think and feel after hearing the presentation?
+\end{itemize}
+There are multitude of benefits to information, such as:
+\begin{itemize}
+	\item Save time and/or effort
+	\item Make people feel comfortable
+	\item Improve their health
+	\item Make them unique
+	\item Help them gain control
+	\item Win a reward
+	\item Attract the opposite sex
+	\item Help protect their reputation
+\end{itemize}
+\subsection{How To Start a Presentation Effectively}
+There are different methods of starting a presentation, but only few them are truly effective. The start of a presentation is critical: it creates the first impression and attracts the reader's attention for the rest of the presentation. The methods of effectively starting a presentation are:
+\begin{enumerate}
+	\item Starting with introduction - you can use a memory re-wiring formula such as a good story, who you are, why the things you say matter, to create an emotional connection. You can also do a stereotypical introduction from a basic template, including a stereotypical joke about your position.
+	\item Humour - surprise he audience right away with something they wouldn't expect to hear. Start the presentation with a joke, everyone loves an unexpected twist like a door bell ring. You await the result. It can be a provocative statement, or a rhetorical thought-provoking question.It can be a bold number, factor, condition.
+	\item Captivating visualisation - you can use visualisations to make a bold statement at the beginning. Visuals are powerful, our brains only need 13 milliseconds to process what our eyes see. Visuals with statistics are also effective.
+	\item What if...? - give the audience a sense of what will happen if they decide to listen to you and follow your advice. Alternatively, you can use "imagine", "visualise" or "think about".
+	\item Curiosity - use instant attention click-bait like title grabbers. Explicitly state that you will say something you don't know, and that you're eager to change that. You can tell a story, pause in the middle, and delay the conclusion. Withhold key information, but not for too long.
+\end{enumerate}
+\subsection{Elements of an Effective Presentation}
+Your job as a presenter is to turn complex technical information into a cohesive and a compelling story, and then present that story in an engaging way. To accomplish this task, you need to consider what you are saying and how you are saying it. As such, you require a clear strategic plan to ensure the effectiveness using the key elements.
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=1\textwidth, inkscapelatex=false]{elements}
+		\caption{Elements of an Effective Presentation}
+		\label{fig:elements}
+	\end{figure}
+And these key elements are:
+\begin{itemize}
+	\item Well-organised - presentation must follow a logical way. Start broad and narrow to key technical details, ending by reconnecting those details to a bigger picture. You can think of your presentation as a story. Creating and resolving tension through questions or problems helps the audience care and remember your message.
+	\item Strong central message - the message should be driven by your strategic goal and strongly supposed by details in your presentation. Any details that do not relate to the central message can be cut or moved to "additional slides" to keep it on topic.
+	\item Tailored content - make sure the content is relevant and tailored to answering your central message. You should adjust the overall level of detail, technical sophistication such as technical jargon and how the topic is framed. Make it relevant and digestable.
+	\item Dynamic delivery - make your information dynamic and engaging, both through verbal and non-verbal communication. Make eye contact and scan the room for inclusion of audience. Be mindful of your pacing.
+	\item Effective visual aids - simple, clean visuals can help you get your point across faster. Visuals should add value and directly support the point that you are trying to make on a particular slide.
+	\item Well-rehearsed - rehearse your presentation by studying the timing. There will be a time limit. Ensure you cover the right amount of content. Practice it out loud, do not rush. Refine your delivery, make the audience feel comfortable.
+\end{itemize}
+Additionally, you can use the TAG method, which is the type, audience, goal method. In other words, you answer:
+\begin{itemize}
+	\item What type of presentation is it?
+	\item Who is the audience?
+	\item What is your goal?
+\end{itemize}
+\subsection{10 Tips for a Successful Presentation}
+\begin{enumerate}
+    \item Prepare Well - This may seem obvious, but thorough preparation is crucial for your presentation. Above all, practise the sequence so you can approach the actual presentation with confidence.
+
+    \item Don't Memorise the Entire Presentation - While you should be well-prepared, memorising everything word-for-word can be a disadvantage because if you forget a word, you might panic. The important thing is to know what you want to say for each slide or section.
+
+    \item Work with a Clear Structure - Ensure your presentation is clearly and cohesively structured. This helps you avoid confused faces in the audience and makes you feel more confident because you can easily navigate through your presentation's clear structure.
+
+    \item Don't Write Everything You Want to Say - Avoid writing everything you want to say on the slide. Stick to manageable bullet-point content and expand on it during your presentation, which makes it easier to follow.
+
+    \item Think About Your Body Language - If you fidget constantly, you'll automatically feel more nervous. Try to remain calm and adopt a confident, open posture with your hands out of your pockets.
+
+    \item Involve the Audience - Depending on the topic and situation, it can be a good idea to engage the audience in your presentation. Framing content as questions not only makes your presentation more relaxed but can also reduce your stress and generate more interest.
+
+    \item Give Yourself Time - Try not to put yourself under time pressure. You should know approximately how long you need, but rushing through so that no one understands anything doesn't help. Speak calmly and clearly—this is more comfortable for both you and your audience.
+
+    \item Checking Something Isn't the End of the World - No one expects absolute perfection from you. The occasional glance at the slide or your notes is completely normal and acceptable. However, it's important not to lose contact with your audience or give the impression you're reading from notes.
+
+    \item Don't Stand Fixed in One Place the Whole Time - If you're nervous, it can help to move around a bit during your presentation. When moving to the next slide, for example, you can move to the other side of the screen or take a quick sip of water. It's important to strike a balance—some movement is good, but avoid constantly pacing back and forth.
+
+    \item Be Open and Honest - Of course, even with the best preparation, you can stumble. If you lose your thread, it's advisable to be honest. The audience will usually understand if you pause briefly to gather your thoughts, and if you speak openly about problems during your presentation, someone can often help you.
+\end{enumerate}
+\subsection{8 Tips for Reducing Anxiety}
+\begin{enumerate}
+    \item Organise - A lack of organisation is a primary cause of anxiety, so ensuring your thoughts are well-structured is essential. Knowing you are prepared gives you the confidence to focus your energy entirely on the delivery.
+    \item Visualise - Imagine entering the room and delivering your presentation with enthusiasm and confidence. Mentally rehearsing every detail of the situation helps you focus on the specific actions required for success.
+    \item Practise - Stand up and use your visual aids as if an audience were present rather than just rehearsing in your head. It is recommended to record yourself or seek feedback to make necessary changes before your final rehearsal session.
+    \item Breathe - When your muscles tighten and you feel nervous, you may not be breathing deeply enough. The first thing you should do is sit upright yet relaxed and take several deep breaths.
+    \item Focus on relaxing - Instead of thinking about the pressure, concentrate on the act of relaxation. Repeat the phrase "I am relaxed" in time with your breathing for several minutes to clear your mind.
+    \item Release tension - Nervous energy can become trapped in your limbs, causing your hands or legs to shake. Perform simple isometric exercises by tensing your muscles from your toes to your fists and then suddenly releasing them to discharge this energy.
+    \item Move - Speakers who stand perfectly still often experience more tension, so allow your muscles to flex and use natural gestures. Moving towards the audience or shifting your position helps release physical stress and keeps the listeners engaged.
+    \item Make eye contact with the audience - Deliver your presentation to one person at a time, connecting with members of the audience as individuals to make the experience more personal. This contact helps you relax by reducing feelings of isolation and allowing you to respond naturally to their interest.
+\end{enumerate}
+\subsection{Personal Appearance}
+For women:
+\begin{enumerate}
+    \item Clothing - Attire should fit well without being too tight, with hem lengths chosen to ensure a professional appearance when seated on stage. Longer sleeves are generally recommended to maintain a formal, businesslike look during your presentation.
+    \item Colours and fabrics - Select two or three colours that complement your skin tone and hair, pairing them with complementary accessories for variety. Opt for high-quality fabrics that do not make noise when you move, and avoid stark colours like bright orange or white that might distract from your face.
+    \item Jewellery - Avoid items that sparkle, dangle, or make noise, as subtle accessories are more appropriate when you are the presenter. Distracting earrings or bracelets can annoy the audience and take their focus away from the content of your speech.
+    \item Makeup - Application should be simple and complementary, as excessive makeup can draw negative or unwanted attention. When done well, it controls oily areas that reflect light and helps you appear more composed even in difficult presentation situations.
+    \item Hair - Your hairstyle should contribute to a positive overall impression without becoming the most dominant feature of your face. While styles are highly individual, they should remain understated to ensure the focus remains on your message.
+\end{enumerate}
+For men:
+\begin{enumerate}
+    \item Suits - Suits should be well-tailored and are best chosen in classic colours like navy, grey, or black. Avoid patterns, bright colours, or baggy styles to ensure you project a professional and reliable image.
+    \item Jackets - Unlike many styles for women, men's suit jackets are specifically designed to be buttoned. Depending on the formality of your presentation, you may choose to button your jacket, leave it unfastened, or remove the coat entirely.
+    \item Shirts - Select well-fitting shirts in subtle colours that are not overly bright. If you are prone to sweating, wearing a cotton T-shirt under a white shirt can help, though light grey is preferred over white for television appearances.
+    \item Ties - Use ties to complement your eye colour and complexion rather than opting for a distracting traditional red. Subtler tones are often more effective as they allow the audience to focus on you rather than your accessories.
+    \item Footwear - Your shoes should be appropriate for the occasion, comfortable, and well-polished. Always ensure your socks match your attire and are long enough to cover your skin when you are seated.
+    \item Grooming - Hair and facial hair should be well-groomed to frame the face neatly, regardless of the specific style. Moustaches should be carefully trimmed above the lip line to maintain a tidy and professional look.
+\end{enumerate}
+\subsection{10 Tips for Planning Successful Slides and Visualisation}
+\begin{enumerate}
+    \item Use slides sparingly - Overusing slides is a primary pitfall in technical presentations. A helpful rule of thumb is to aim for one slide for every two minutes of presentation time to maintain audience engagement.
+    \item Make slides pictorial - Use graphs, equipment photographs, and diagrams to give the viewer a visual insight that would otherwise require many words or columns of figures. These elements help the audience grasp complex information much faster than text alone.
+    \item Present one key point per slide - Keep the focus of each slide simple and clear to ensure maximum impact. Presenting more than one main idea at a time can seriously diminish the effectiveness of your message and confuse the audience.
+    \item Make text and numbers legible - Ensure your font size is at least 20pt so that everyone in the room can read the content easily. If the data is too dense, be prepared to provide extra explanations in a handout or highlight specific areas of a diagram.
+    \item Use colours carefully - Limit yourself to no more than three or four colours per slide to avoid a cluttered and unprofessional appearance. Choose high-contrast combinations, such as light yellow text on a navy blue background, to ensure everything is easy to see.
+    \item Ensure visuals are large enough - Always check your presentation from the very back row of the room where the audience will be sitting. This ensures that every element on your slide is clearly visible to those furthest from the screen.
+    \item Use graphic data - Avoid using tables whenever possible and opt for graphs instead. Graphs allow the viewer to visualise data and trends in a way that lists of numbers simply cannot achieve.
+    \item Make images and diagrams easy to view - Ensure that all photographs and diagrams are clear and that any labels are legible even from the back of the room. Visuals that are difficult to see from a distance will only distract and frustrate your listeners.
+    \item Avoid unnecessary slides - If a point can be made simply and verbally, such as a basic title or a brief statement, there is no need for a dedicated slide. Minimising clutter helps keep the audience's attention on you as the speaker.
+    \item Use animations sparingly - Complex builds and animations should be used very selectively as they can often interfere with the substance of your message. If used excessively, they become a distraction rather than a helpful tool.
+\end{enumerate}
+\subsection{15 Tips for Creating Better Slides}
+\begin{enumerate}
+    \item Allow two minutes per slide - Use this rule of thumb to estimate the total number of slides needed for your presentation. If your slides include complex diagrams or detailed explanations, you should allocate even more time to each one.
+    \item Use functional headings - Whenever possible, your slide titles should contain the conclusion you want the audience to reach or the specific action you want them to take. This ensures the main message is immediately clear to every viewer.
+    \item Follow the 5x5 rule - Limit the content of each slide to a maximum of five bullet points and no more than five words per point. You should also maintain a consistent grammatical structure and style for every item on the slide.
+    \item Use phrases and keywords - Select your words carefully to communicate the essence of each point quickly without using full sentences. If long descriptions or detailed explanations are necessary, save that information for your printed handouts.
+    \item Use sentence case - Capitalise only the first letter of the first word and any proper nouns within your bullet points. Using capital letters for every word can make a slide look cluttered and much harder for the audience to read.
+    \item Avoid building every slide - Revealing bullet points one at a time can be effective, but the audience will grow tired of the repetition if you do it on every slide. Stick to a single type of transition effect throughout your presentation to maintain professionalism.
+    \item Number every slide - Adding slide numbers helps viewers stay on track if they lose the thread of the discussion or join the session late. It also makes it easier for the audience to refer back to specific slides during a question and answer session.
+    \item Stick to a style guide - Follow your company's colour scheme and use dark backgrounds with light text for maximum legibility. For large audiences, white or yellow text on a navy blue background is often the easiest combination to read.
+    \item Consider sans serif fonts - Use fonts such as Arial or Helvetica, as many people find them easier and faster to read when projected. These styles significantly improve legibility, particularly for those sitting at the back of a large room.
+    \item Use a large font size - Aim for a minimum font size of 24 points unless you are presenting to a very small group. You should never expect an audience to be able to read a font that is smaller than 20 points.
+    \item Use images and videos - Incorporating photographs and videos can help break the monotony of text-based slides. However, ensure that any drawings or diagrams you include remain simple, accurate, and relevant to your message.
+    \item Limit the use of clip art - Use clip art very sparingly or, preferably, avoid using it altogether. Many modern professional environments discourage its use as it can detract from the credibility of your presentation.
+    \item Animate drawings selectively - Building a complex drawing or process in stages is a great way to maintain audience attention and explain flow. Be careful not to overdo it, as excessive animation can make the audience focus on the visual tricks rather than your speech.
+    \item Have a backup plan - Always carry a backup version of your presentation in case you encounter technical difficulties with your laptop or the projector. Being prepared for equipment failure ensures you can stay calm and continue your delivery.
+    \item Remember you are the messenger - Your slides are merely a communication tool and should not be the primary focus of the presentation. You are the one carrying the message, and the visuals are only there to support what you are saying.
+\end{enumerate}
+\subsection{Layout}
+There are general layout rules for a presentation that you must follow during speaking.
+	\begin{figure}[H]
+		\centering
+		\includesvg[width=0.8\textwidth, inkscapelatex=false]{present}
+		\caption{Layout of a professional presentation}
+		\label{fig:presentation}
+	\end{figure}
+	\begin{itemize}
+		\item Create eye contact with the audience, not the presentation itself.
+		\item The presenter should be in a central position, as such, tilting the presentation is the best practice.
+		\item Do not put your arms in a fig leaf position, wring your hands nervously, cross your arms, keep your hands behind you like handcuff, or keep your hands in your pocket.
+	\end{itemize}
+	\subsection{Teleconferencing and Videoconferencing}
+	Virtual meetings have become a staple of modern business, offering a flexible alternative to traditional face-to-face interactions. While these technologies provide significant logistical advantages, they also introduce unique challenges regarding participant engagement and communication clarity.
+	\begin{table}[H]
+\caption{Advantages and Disadvantages of Virtual Conferencing}
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+Aspect & Description \\
+\hline
+Distraction (Conference) & Participants often become distracted because there is no visual element to hold their attention. Without a screen to focus on, it is much easier for the mind to wander during the discussion. \\
+\hline
+Communication (Conference) & Voice is the only method for engaging participants, meaning there is no opportunity for non-verbal communication. This makes it harder to convey tone or read the room effectively. \\
+\hline
+Loudspeaker Syndrome & Using a loudspeaker creates a situation where you can never be certain who is actually listening or paying attention. This lack of accountability can undermine the effectiveness of the meeting. \\
+\hline
+Phone Etiquette & Poor etiquette is common as people may act rudely when they feel invisible to the rest of the group. The perceived anonymity of a phone call often leads to less professional behaviour. \\
+\hline
+Equipment Misuse (Video) & Technical benefits are often lost when equipment, such as wide-angle cameras, is not configured correctly. This makes it difficult for participants to see exactly who is speaking at any given time. \\
+\hline
+Communication Friction (Video) & Unrealistic expectations for clear communication can lead to frustration when voice-activated microphones make dialogue feel awkward. These technical limitations can hinder the natural flow of a two-way conversation. \\
+\hline
+Cost Savings & Both methods offer significant financial benefits by eliminating the need for expensive airfare, hotels, and meals. These savings can amount to thousands of pounds over the course of a business year. \\
+\hline
+Time Efficiency & Meetings can be held directly from your workplace, minimising the time spent away from your primary duties. Strict time constraints on equipment also ensure that sessions start and end on schedule. \\
+\hline
+Enhanced Teamwork & Virtual meetings allow for greater participation as more staff members can join without the limitations of travel budgets. This allows information to be shared and refined by the whole team in real time. \\
+\hline
+\end{tabularx}
+\end{table}
+\newpage
+\begin{appendices}
+        \section{Style Guide Example}
+        \begin{center}
+        \fbox{\includegraphics[page=1, width=0.9\textwidth]{style_guide.pdf}}
+        \end{center}
+        
+        \includepdf[
+          pages=2-,
+          nup=1x2,
+          frame=true,
+          scale=0.9,
+          delta=5mm 10mm,
+          trim=0mm 0mm 0mm 0mm,
+          clip=true
+        ]{style_guide.pdf}
+\section{Planning \& Design Example}
+\begin{center}
+\fbox{\includegraphics[page=1, width=0.9\textwidth]{design.pdf}}
+\end{center}
+
+\includepdf[
+  pages=2-,
+  frame=true,
+  scale=0.9
+]{design.pdf}
+	\section{SRS Example}
+\begin{center}
+\fbox{\includegraphics[page=1, width=0.9\textwidth]{requirements.pdf}}
+\end{center}
+
+\includepdf[
+  pages=2-,
+  frame=true,
+  scale=0.9
+]{requirements.pdf}
+\end{appendices}
+
+\end{document}
