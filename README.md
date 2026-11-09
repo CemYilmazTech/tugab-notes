@@ -1,4 +1,4 @@
-#Technical University of Gabrovo Notes
+# Technical University of Gabrovo Notes
 Notes made using the lectures of Technical University of Gabrovo for the Software and Computer Engineering degree (SKE)
 ## Bachelor
 Contains notes for the following modules:
